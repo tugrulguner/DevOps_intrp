@@ -1,6 +1,6 @@
 # library doc string
 
-Should write doc string here
+
 # import libraries
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -47,7 +47,7 @@ def perform_eda(df):
     
     plt.figure(figsize=(20,10))
     fig_heatmap = sns.heatmap(df.corr(), annot=False, cmap='Dark2_r', linewidths = 2).get_figure()
-    fig_heatmap.savefig(f'./images/eda/{column_names}_heatmap.png')
+    fig_heatmap.savefig(f'./images/eda/heatmap.png')
 
 
 
@@ -64,7 +64,10 @@ def encoder_helper(df, category_lst, response):
     output:
             df: pandas dataframe with new columns for
     '''
-    pass
+    for category in category_lst:
+        category_groups = df.groupby(category).mean()[response]
+        df[f'{category}_{response}'] = [category_groups.loc[val] for val in df[category]]
+    return df
 
 
 def perform_feature_engineering(df, response):
