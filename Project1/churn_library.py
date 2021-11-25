@@ -5,6 +5,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+from sklearn.model_selection import train_test_split
 
 
 
@@ -82,6 +83,11 @@ def perform_feature_engineering(df, response):
               y_train: y training data
               y_test: y testing data
     '''
+    y = df['Churn']
+    X = df[response]
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size= 0.3, random_state=42)
+    return X_train, X_test, y_train, y_test
+    
 
 def classification_report_image(y_train,
                                 y_test,
