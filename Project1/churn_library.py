@@ -6,7 +6,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.model_selection import train_test_split
-
+from PIL import ImageDraw
 
 
 def import_data(pth):
@@ -109,7 +109,29 @@ def classification_report_image(y_train,
     output:
              None
     '''
-    pass
+    blank_image_rftr = Image.new('RGB', (400, 150))
+    draw_blankIm_rftr = ImageDraw.Draw(blank_image)
+    draw_blankIm_rftr.text((5,5), 'Random Forest Train')
+    draw_blankIm_rftr.text((15, 15), classification_report(y_train, y_train_preds_rf))
+    blank_image_rftr.save('./images/eda/RandomForest_train.png')
+    
+    blank_image_rfte = Image.new('RGB', (400, 150))
+    draw_blankIm_rfte = ImageDraw.Draw(blank_image)
+    draw_blankIm_rfte.text((5,5), 'Random Forest Test')
+    draw_blankIm_rfte.text((15, 15), classification_report(y_test, y_test_preds_rf))
+    blank_image_rfte.save('./images/eda/RandomForest_test.png')
+    
+    blank_image_lrtr = Image.new('RGB', (400, 150))
+    draw_blankIm_lrtr = ImageDraw.Draw(blank_image)
+    draw_blankIm_lrtr.text((5,5), 'Logistic Regression Train')
+    draw_blankIm_lrtr.text((15, 15), classification_report(y_train, y_train_preds_lr))
+    blank_image_lrtr.save('./images/eda/LogisticRegression_train.png')
+    
+    blank_image_lrte = Image.new('RGB', (400, 150))
+    draw_blankIm_lrte = ImageDraw.Draw(blank_image)
+    draw_blankIm_lrte.text((5,5), 'Logistic Regression Tests')
+    draw_blankIm_lrte.text((15, 15), classification_report(y_test, y_test_preds_lr))
+    blank_image_lrte.save('./images/eda/LogisticRegression_test.png')
 
 
 def feature_importance_plot(model, X_data, output_pth):
