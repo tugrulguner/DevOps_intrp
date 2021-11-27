@@ -29,23 +29,21 @@ def test_import(import_data):
 
 
 def test_eda(perform_eda):
-	'''
-	test perform eda function
-	'''
+
     try:
-        test_import(import_data)
-        df = import_data("./data/bank_data.csv")
-        perform_eda(df)
-        assert len(os.listdir('./images/eda/') ) == 0
+#         df = import_data("./data/bank_data.csv")
+#         perform_eda(df)
+        assert len(os.listdir('./images/eda/') ) > 0
+        logging.info('Images were created: SUCCESS')
     except AssertionError as err:
         logging.error("Testing perform_eda: Plots were not created, check your data")
     
     try:
-        data_verification = [os.path.getsize(file) for file in glob.glob('./images/eda/*.png')]
-        assert data_verification.any() == 0
+        data_verification = [os.path.getsize(file)>0 for file in glob.glob('./images/eda/*.png')]
+        assert any(x == True for x in data_verification)
+        logging.info('Image were created and not empty: SUCCESS')
     except AssertionError as err:
-        logging.error("Testing perform_eda: Plots were created some has data size 0 kb")
-            
+        logging.error("Testing perform_eda: Plots were created some has data size 0 kb")            
 
 def test_encoder_helper(encoder_helper):
 	'''
@@ -66,8 +64,8 @@ def test_train_models(train_models):
 
 
 if __name__ == "__main__":
-    test_import(import_data)
-    test_eda(perform_eda)
+    print(test_import(import_data))
+    print(test_eda(perform_eda))
 
 
 
