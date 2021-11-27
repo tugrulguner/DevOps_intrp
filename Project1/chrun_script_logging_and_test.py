@@ -1,6 +1,6 @@
 import os
 import logging
-import churn_library_solution as cls
+from churn_library import *
 import glob
 
 logging.basicConfig(
@@ -33,12 +33,19 @@ def test_eda(perform_eda):
 	test perform eda function
 	'''
     try:
+        test_import(import_data)
         df = import_data("./data/bank_data.csv")
         perform_eda(df)
         assert len(os.listdir('./images/eda/') ) == 0
     except AssertionError as err:
         logging.error("Testing perform_eda: Plots were not created, check your data")
-
+    
+    try:
+        data_verification = [os.path.getsize(file) for file in glob.glob('./images/eda/*.png')]
+        assert data_verification.any() == 0
+    except AssertionError as err:
+        logging.error("Testing perform_eda: Plots were created some has data size 0 kb")
+            
 
 def test_encoder_helper(encoder_helper):
 	'''
@@ -59,7 +66,8 @@ def test_train_models(train_models):
 
 
 if __name__ == "__main__":
-	pass
+    test_import(import_data)
+    test_eda(perform_eda)
 
 
 
