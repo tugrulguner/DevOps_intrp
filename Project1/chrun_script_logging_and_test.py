@@ -54,6 +54,10 @@ def test_eda(perform_eda):
 
 def test_encoder_helper(encoder_helper):
     
+    '''
+    Testing the encoder_helper function
+    '''
+    
     df = import_data("./data/bank_data.csv")
     df['Churn'] = df['Attrition_Flag'].apply(lambda val: 0 if val == "Existing Customer" else 1)
     cat_columns = [
@@ -86,6 +90,9 @@ def test_encoder_helper(encoder_helper):
 
 def test_perform_feature_engineering(perform_feature_engineering):
     
+    '''
+    Testing of the perform_feature_engineering function
+    '''
     
     df = import_data("./data/bank_data.csv")
     df['Churn'] = df['Attrition_Flag'].apply(lambda val: 0 if val == "Existing Customer" else 1)
@@ -149,6 +156,10 @@ def test_perform_feature_engineering(perform_feature_engineering):
                      
 def test_train_models(train_models):
     
+    '''
+    Testing of the train_models function
+    '''
+    
     df = import_data("./data/bank_data.csv")
     df['Churn'] = df['Attrition_Flag'].apply(lambda val: 0 if val == "Existing Customer" else 1)
     
@@ -170,9 +181,9 @@ def test_train_models(train_models):
              'Gender_Churn', 'Education_Level_Churn', 'Marital_Status_Churn', 
              'Income_Category_Churn', 'Card_Category_Churn']
     
-#     X_train, X_test, y_train, y_test = perform_feature_engineering(encoder, keep_cols)
+    X_train, X_test, y_train, y_test = perform_feature_engineering(encoder, keep_cols)
     
-#     train_models(X_train, X_test, y_train, y_test)
+    train_models(X_train, X_test, y_train, y_test)
     try:
         assert len(os.listdir('./images/results/') ) > 0
         logging.info('Images of training results were created: SUCCESS')
@@ -195,7 +206,6 @@ if __name__ == "__main__":
     test_perform_feature_engineering(perform_feature_engineering)
     test_train_models(train_models)
     
-
 
 
 
