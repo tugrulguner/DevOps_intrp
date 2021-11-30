@@ -1,3 +1,10 @@
+'''
+
+Author: Tugrul Guner
+Date: 28 Nov 2021
+
+'''
+
 import os
 import logging
 from churn_library import *
@@ -205,6 +212,8 @@ if __name__ == "__main__":
     test_encoder_helper(encoder_helper)
     test_perform_feature_engineering(perform_feature_engineering)
     test_train_models(train_models)
+
+
     
 
 
