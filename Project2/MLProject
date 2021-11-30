@@ -11,11 +11,15 @@ entry_points:
         description: Name for the W&B artifact that will be created
         type: str
       artifact_type:
-	description: Artifact type
-	type: str
-	default: raw_data.csv
+        description: Artifact type
+        type: str
+        default: raw_data.csv
+      artifact_description:
+        description: Artifact description
+        type: str
 
     command: >-
       python download_data.py --file_url {file_url} \
                               --artifact_name {artifact_name} \
-			     --artifact_type {artifact_type}
+                              --artifact_type {artifact_type} \
+                              --artifact_description {artifact_description}

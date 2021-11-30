@@ -1,0 +1,31 @@
+{
+    "os": "macOS-11.6-x86_64-i386-64bit",
+    "python": "3.9.7",
+    "heartbeatAt": "2021-11-30T16:26:32.292233",
+    "startedAt": "2021-11-30T16:26:30.818855",
+    "docker": null,
+    "cpu_count": 4,
+    "cuda": null,
+    "args": [
+        "--file_url",
+        "https://raw.githubusercontent.com/scikit-learn/scikit-learn/4dfdfb4e1bb3719628753a4ece995a1b2fa5312a/sklearn/datasets/data/iris.csv",
+        "--artifact_name",
+        "iris",
+        "--artifact_type",
+        "str",
+        "--artifact_description",
+        "This data sets consists of 3 different types of irises\u2019 (Setosa, Versicolour, and Virginica) petal and sepal length"
+    ],
+    "state": "running",
+    "program": "/Users/ozgecaylioglu/Desktop/GitHub_Projects/udacity_repo/Project2/download_data.py",
+    "codePath": "Project2/download_data.py",
+    "git": {
+        "remote": "https://github.com/tugrulguner/udacity_repo.git",
+        "commit": "4117ceb601fe219f9220f67333fe2398851c1fed"
+    },
+    "email": "tugrulgunr@gmail.com",
+    "root": "/Users/ozgecaylioglu/Desktop/GitHub_Projects/udacity_repo",
+    "host": "Ozgnr.local",
+    "username": "ozgecaylioglu",
+    "executable": "/opt/anaconda3/envs/mlflow-35c2fef811a8212520e1943fc147f38ec6f203c6/bin/python"
+}
