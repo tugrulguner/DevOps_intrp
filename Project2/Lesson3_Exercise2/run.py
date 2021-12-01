@@ -17,7 +17,7 @@ def go(args):
     genres_mod = run.use_artifact(f'{args.input_artifact}')
 
     logger.info("Reading the fetched data")
-    df = pd.read_parquet(genres_mode.file())
+    df = pd.read_parquet(genres_mod.file())
 
     logger.info("Preprocessing the data")
     df = df.drop_duplicates().reset_index(drop=True)
