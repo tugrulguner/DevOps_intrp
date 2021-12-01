@@ -13,14 +13,30 @@ def go(args):
 
     run = wandb.init(project="exercise_5", job_type="process_data")
 
-    genres_mod = run.use_artifact("exercise_4/genres_mod.parquet:latest")
+    logger.info("Fetching the artifact")
+    genres_mod = run.use_artifact(f'{args.input_artifact}')
+
+    logger.info("Reading the fetched data")
     df = pd.read_parquet(genres_mode.file())
-    df.drop_duplicates().reset_index(drop=True)
+
+    logger.info("Preprocessing the data")
+    df = df.drop_duplicates().reset_index(drop=True)
     df['title'].fillna(value='', inplace=True)
     df['song_name'].fillna(value='', inplace=True)
     df['text_feature'] = df['title'] + ' ' + df['song_name']
-    df.to_csv('preprocessed_data.csv')
-    pass
+
+    logger.info("Saving to a file")
+    outfile = args.artifact_name
+    df.to_csv(outfile)
+
+    logging.info("Attaching and running file to W&B")
+    artifact = wandb.Artifact(
+    name = args.artifact_name,
+    type = args.artifact_type,
+    description = args.artifact_description
+    )
+    artifact.add_file(outfile)
+    run.log_artifact(artifact)
 
 
 if __name__ == "__main__":
