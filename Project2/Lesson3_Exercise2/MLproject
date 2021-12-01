@@ -3,6 +3,22 @@ conda_env: conda.yml
 
 entry_points:
   main:
+    parameters:
+      input_artifact:
+        description: Input file for cleaning
+        type: str
+      artifact_name:
+        description: Name of the artifact_name
+        type: str
+      artifact_type:
+        description: Type of the output artifact
+        type: str
+      artifact_description:
+        description: Description of the artifact
+        type: str
 
     command: >-
-      python run.py 
+      python run.py --input_artifact {input_artifact} \
+                  --artifact_name {artifact_name} \
+                  --artifact_type {artifact_type} \
+                  --artifact_description {artifact_description}
