@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/ozgecaylioglu/Desktop/GitHub_Projects/udacity_repo/Project2/Exercise_3_Pipeline/mlruns/0/1e1e1a2bba414c1b984c5b0c78cdf551/artifacts
+end_time: 1638317026254
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+name: ''
+run_id: 1e1e1a2bba414c1b984c5b0c78cdf551
+run_uuid: 1e1e1a2bba414c1b984c5b0c78cdf551
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1638317020787
+status: 4
+tags: []
+user_id: ozgecaylioglu
