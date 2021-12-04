@@ -1,0 +1,27 @@
+{
+    "os": "macOS-10.16-x86_64-i386-64bit",
+    "python": "3.8.12",
+    "heartbeatAt": "2021-12-04T17:22:42.396368",
+    "startedAt": "2021-12-04T17:22:40.450580",
+    "docker": null,
+    "cpu_count": 4,
+    "cuda": null,
+    "args": [
+        "--train_data",
+        "exercise_6/data_train.csv:latest",
+        "--model_config",
+        "/Users/ozgecaylioglu/Desktop/GitHub_Projects/udacity_repo/Project2/Lesson5_Exercise11/multirun/2021-12-04/12-20-49/4/random_forest_config.yml"
+    ],
+    "state": "running",
+    "program": "run.py",
+    "codePath": "Project2/Lesson5_Exercise11/random_forest/run.py",
+    "git": {
+        "remote": "https://github.com/tugrulguner/udacity_repo.git",
+        "commit": "c5c3c47d186630685b7cc468a136b03d9da6fc2d"
+    },
+    "email": "tugrulgunr@gmail.com",
+    "root": "/Users/ozgecaylioglu/Desktop/GitHub_Projects/udacity_repo",
+    "host": "Ozgnr.local",
+    "username": "ozgecaylioglu",
+    "executable": "/opt/anaconda3/envs/mlflow-70e71a7afdc413046f59e7b87abd03dc50d8745f/bin/python"
+}
