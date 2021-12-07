@@ -1,0 +1,18 @@
+2021-12-01 10:07:43,304 Downloading and reading artifact
+2021-12-01 10:07:44,658 Splitting data into train and test
+Traceback (most recent call last):
+  File "/Users/ozgecaylioglu/Desktop/GitHub_Projects/udacity_repo/Project2/Lesson3_Exercise3/run.py", line 126, in <module>
+    go(args)
+  File "/Users/ozgecaylioglu/Desktop/GitHub_Projects/udacity_repo/Project2/Lesson3_Exercise3/run.py", line 34, in go
+    splits["train"], splits["test"] = train_test_split(
+  File "/opt/anaconda3/envs/mlflow-b536c99cab3f07bfeb0a1ad9e153575c07cd087e/lib/python3.9/site-packages/sklearn/model_selection/_split.py", line 2197, in train_test_split
+    train, test = next(cv.split(X=arrays[0], y=stratify))
+  File "/opt/anaconda3/envs/mlflow-b536c99cab3f07bfeb0a1ad9e153575c07cd087e/lib/python3.9/site-packages/sklearn/model_selection/_split.py", line 1793, in split
+    y = check_array(y, ensure_2d=False, dtype=None)
+  File "/opt/anaconda3/envs/mlflow-b536c99cab3f07bfeb0a1ad9e153575c07cd087e/lib/python3.9/site-packages/sklearn/utils/validation.py", line 63, in inner_f
+    return f(*args, **kwargs)
+  File "/opt/anaconda3/envs/mlflow-b536c99cab3f07bfeb0a1ad9e153575c07cd087e/lib/python3.9/site-packages/sklearn/utils/validation.py", line 667, in check_array
+    n_samples = _num_samples(array)
+  File "/opt/anaconda3/envs/mlflow-b536c99cab3f07bfeb0a1ad9e153575c07cd087e/lib/python3.9/site-packages/sklearn/utils/validation.py", line 202, in _num_samples
+    raise TypeError("Singleton array %r cannot be considered"
+TypeError: Singleton array array('genre', dtype='<U5') cannot be considered a valid collection.

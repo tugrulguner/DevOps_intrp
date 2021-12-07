@@ -39,4 +39,6 @@ def data(request):
 @pytest.fixture(scope='session')
 def ks_alpha(request):
 
-    ks_alpha_request = request.config.option.ks_alpha
+    ks_alpha_artifact = request.config.option.ks_alpha
+
+    return float(ks_alpha_artifact)

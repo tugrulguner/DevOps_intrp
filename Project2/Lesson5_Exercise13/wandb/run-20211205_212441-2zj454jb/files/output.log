@@ -1,0 +1,9 @@
+2021-12-05 21:24:43,065 Downloading and reading test artifact
+2021-12-05 21:24:44,109 Extracting target from dataframe
+2021-12-05 21:24:44,118 Downloading and reading the exported model
+Traceback (most recent call last):
+  File "run.py", line 86, in <module>
+    go(args)
+  File "run.py", line 37, in go
+    pred_proba = pipe.predict.proba(args.test_data)
+AttributeError: 'function' object has no attribute 'proba'

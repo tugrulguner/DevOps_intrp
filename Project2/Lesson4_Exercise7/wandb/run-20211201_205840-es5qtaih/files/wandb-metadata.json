@@ -1,0 +1,25 @@
+{
+    "os": "macOS-11.6-x86_64-i386-64bit",
+    "python": "3.9.7",
+    "heartbeatAt": "2021-12-02T01:58:45.541107",
+    "startedAt": "2021-12-02T01:58:40.329867",
+    "docker": null,
+    "cpu_count": 4,
+    "cuda": null,
+    "args": [
+        "-s",
+        "-vv",
+        "."
+    ],
+    "state": "running",
+    "program": "<python with no main file>",
+    "git": {
+        "remote": "https://github.com/tugrulguner/udacity_repo.git",
+        "commit": "a4ad8abf6e6996e1193c534b7a5f0c135031eeb9"
+    },
+    "email": "tugrulgunr@gmail.com",
+    "root": "/Users/ozgecaylioglu/Desktop/GitHub_Projects/udacity_repo",
+    "host": "Ozgnr.local",
+    "username": "ozgecaylioglu",
+    "executable": "/opt/anaconda3/envs/mlflow-a3af6a16a95faee04af2c40a1852613ae4973185/bin/python"
+}

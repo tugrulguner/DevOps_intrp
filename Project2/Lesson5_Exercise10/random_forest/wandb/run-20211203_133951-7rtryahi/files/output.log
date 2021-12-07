@@ -1,0 +1,12 @@
+2021-12-03 13:39:53,269 Downloading and reading train artifact
+2021-12-03 13:39:55,836 Extracting target from dataframe
+2021-12-03 13:39:55,856 Splitting train/val
+2021-12-03 13:39:56,106 Setting up pipeline
+Traceback (most recent call last):
+  File "run.py", line 208, in <module>
+    go(args)
+  File "run.py", line 43, in go
+    pipe = get_inference_pipeline(args)
+  File "run.py", line 143, in get_inference_pipeline
+    nlp_transformer = make_pipeline(SimpleImputer(strategy='constant', fill_value=""), reshape_to_1d(),
+TypeError: 'FunctionTransformer' object is not callable

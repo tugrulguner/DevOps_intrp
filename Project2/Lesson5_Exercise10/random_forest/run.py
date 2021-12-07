@@ -140,7 +140,7 @@ def get_inference_pipeline(args):
     reshape_to_1d = FunctionTransformer(np.reshape, kw_args={"newshape": -1})
 
     ############# YOUR CODE HERE
-    nlp_transformer = make_pipeline(SimpleImputer(strategy='constant', fill_value=""), reshape_to_1d(),
+    nlp_transformer = make_pipeline(SimpleImputer(strategy='constant', fill_value=""), reshape_to_1d,
     TfidfVectorizer(binary=True))
     
     

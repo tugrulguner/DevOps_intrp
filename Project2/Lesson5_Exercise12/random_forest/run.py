@@ -95,6 +95,20 @@ def export_model(run, pipe, X_val, val_pred, export_artifact):
 
         export_path = os.path.join(temp_dir, "model_export")
 
+        mlflow.sklearn.save_model(
+            pipe,
+            export_path,
+            signature=signature,
+            input_example=X_val.iloc[:2]
+        )
+
+        artifact = wandb.Artifact(
+            export_artifact,
+            type="Model Export",
+            description='RF Export model'
+        )
+        artifact.add_dir(export_path)
+        run.log_artifact(artifact)
         #### YOUR CODE HERE
         # Save the pipeline in the export_path directory using mlflow.sklearn.save_model
         # function. Provide the signature computed above ("signature") as well as a few

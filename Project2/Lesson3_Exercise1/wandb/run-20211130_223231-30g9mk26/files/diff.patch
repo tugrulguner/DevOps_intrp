@@ -1,0 +1,130 @@
+diff --git a/Project2/Exercise_3_Pipeline/MLproject b/Project2/Exercise_3_Pipeline/MLproject
+index 08ed647..e69de29 100644
+--- a/Project2/Exercise_3_Pipeline/MLproject
++++ b/Project2/Exercise_3_Pipeline/MLproject
+@@ -1,12 +0,0 @@
+-name: download_data
+-conda_env: conda.yml
+-
+-entry_points:
+-  main:
+-    parameters:
+-      hydra_options:
+-        description: Hydra parameters to override
+-        type: str
+-        default: ''
+-    command: >-
+-      python main.py $(echo {hydra_options})
+diff --git a/Project2/Exercise_3_Pipeline/conda.yml b/Project2/Exercise_3_Pipeline/conda.yml
+index 24e597f..f216511 100644
+--- a/Project2/Exercise_3_Pipeline/conda.yml
++++ b/Project2/Exercise_3_Pipeline/conda.yml
+@@ -3,9 +3,11 @@ channels:
+   - conda-forge
+   - defaults
+ dependencies:
+-  - requests=2.24.0
++  - jupyterlab=3.0.12
++  - seaborn=0.11.1
++  - pandas=1.2.3
+   - pip=20.3.3
+-  - mlflow=1.14.1
+-  - hydra-core=1.0.6
++  - pandas-profiling=2.11.0
++  - pyarrow=2.0
+   - pip:
+-    - wandb==0.10.21
+\ No newline at end of file
++      - wandb==0.10.21
+\ No newline at end of file
+diff --git a/Project2/Lesson3_Exercise1/MLproject b/Project2/Lesson3_Exercise1/MLproject
+index e69de29..f08ede9 100644
+--- a/Project2/Lesson3_Exercise1/MLproject
++++ b/Project2/Lesson3_Exercise1/MLproject
+@@ -0,0 +1,8 @@
++name: download_data
++conda_env: conda.yml
++
++entry_points:
++  main:
++
++    command: >-
++      jupyter notebook
+diff --git a/Project2/Lesson3_Exercise1/wandb/debug-internal.log b/Project2/Lesson3_Exercise1/wandb/debug-internal.log
+index 9c133b4..698f2eb 120000
+--- a/Project2/Lesson3_Exercise1/wandb/debug-internal.log
++++ b/Project2/Lesson3_Exercise1/wandb/debug-internal.log
+@@ -1 +1 @@
+-run-20211130_221216-3kttlxyr/logs/debug-internal.log
+\ No newline at end of file
++run-20211130_223231-30g9mk26/logs/debug-internal.log
+\ No newline at end of file
+diff --git a/Project2/Lesson3_Exercise1/wandb/debug.log b/Project2/Lesson3_Exercise1/wandb/debug.log
+index 76cbeb7..4d1ee2a 120000
+--- a/Project2/Lesson3_Exercise1/wandb/debug.log
++++ b/Project2/Lesson3_Exercise1/wandb/debug.log
+@@ -1 +1 @@
+-run-20211130_221216-3kttlxyr/logs/debug.log
+\ No newline at end of file
++run-20211130_223231-30g9mk26/logs/debug.log
+\ No newline at end of file
+diff --git a/Project2/Lesson3_Exercise1/wandb/latest-run b/Project2/Lesson3_Exercise1/wandb/latest-run
+index 2d677a4..26bdcbb 120000
+--- a/Project2/Lesson3_Exercise1/wandb/latest-run
++++ b/Project2/Lesson3_Exercise1/wandb/latest-run
+@@ -1 +1 @@
+-run-20211130_221216-3kttlxyr
+\ No newline at end of file
++run-20211130_223231-30g9mk26
+\ No newline at end of file
+diff --git a/Project2/MLProject b/Project2/MLProject
+index ce634f3..e69de29 100644
+--- a/Project2/MLProject
++++ b/Project2/MLProject
+@@ -1,25 +0,0 @@
+-name: download_data
+-conda_env: conda.yml
+-
+-entry_points:
+-  main:
+-    parameters:
+-      file_url:
+-        description: URL of the file to download
+-        type: uri
+-      artifact_name:
+-        description: Name for the W&B artifact that will be created
+-        type: str
+-      artifact_type:
+-        description: Artifact type
+-        type: str
+-        default: raw_data.csv
+-      artifact_description:
+-        description: Artifact description
+-        type: str
+-
+-    command: >-
+-      python download_data.py --file_url {file_url} \
+-                              --artifact_name {artifact_name} \
+-                              --artifact_type {artifact_type} \
+-                              --artifact_description {artifact_description}
+\ No newline at end of file
+diff --git a/Project2/conda.yml b/Project2/conda.yml
+index 10d6a90..f216511 100644
+--- a/Project2/conda.yml
++++ b/Project2/conda.yml
+@@ -3,9 +3,11 @@ channels:
+   - conda-forge
+   - defaults
+ dependencies:
+-  - requests=2.24.0
++  - jupyterlab=3.0.12
++  - seaborn=0.11.1
++  - pandas=1.2.3
+   - pip=20.3.3
+-  - mlflow=1.14.1
+-  - hydra-core=1.0.6
++  - pandas-profiling=2.11.0
++  - pyarrow=2.0
+   - pip:
+       - wandb==0.10.21
+\ No newline at end of file

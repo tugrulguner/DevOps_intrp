@@ -1,0 +1,8 @@
+2021-12-01 10:06:55,821 Downloading and reading artifact
+2021-12-01 10:06:57,394 Splitting data into train and test
+Traceback (most recent call last):
+  File "/Users/ozgecaylioglu/Desktop/GitHub_Projects/udacity_repo/Project2/Lesson3_Exercise3/run.py", line 126, in <module>
+    go(args)
+  File "/Users/ozgecaylioglu/Desktop/GitHub_Projects/udacity_repo/Project2/Lesson3_Exercise3/run.py", line 36, in go
+    test_size=args.testsize,
+AttributeError: 'Namespace' object has no attribute 'testsize'

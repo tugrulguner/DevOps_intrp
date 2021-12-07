@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/ozgecaylioglu/Desktop/GitHub_Projects/udacity_repo/Project2/Lesson5_Exercise10/mlruns/0/4831d84865a843549e9686b3dbf1066e/artifacts
+end_time: 1638556802234
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+name: ''
+run_id: 4831d84865a843549e9686b3dbf1066e
+run_uuid: 4831d84865a843549e9686b3dbf1066e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1638556601347
+status: 4
+tags: []
+user_id: ozgecaylioglu

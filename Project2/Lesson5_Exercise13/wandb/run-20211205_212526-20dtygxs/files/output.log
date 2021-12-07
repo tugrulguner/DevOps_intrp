@@ -1,0 +1,23 @@
+2021-12-05 21:25:28,546 Downloading and reading test artifact
+2021-12-05 21:25:29,399 Extracting target from dataframe
+2021-12-05 21:25:29,402 Downloading and reading the exported model
+Traceback (most recent call last):
+  File "run.py", line 86, in <module>
+    go(args)
+  File "run.py", line 37, in go
+    pred_proba = pipe.predict_proba(args.test_data)
+  File "/opt/anaconda3/envs/mlflow-9ad98997f01f10ca95d41cc160bcad3e8dac16f6/lib/python3.8/site-packages/sklearn/utils/metaestimators.py", line 120, in <lambda>
+    out = lambda *args, **kwargs: self.fn(obj, *args, **kwargs)
+  File "/opt/anaconda3/envs/mlflow-9ad98997f01f10ca95d41cc160bcad3e8dac16f6/lib/python3.8/site-packages/sklearn/pipeline.py", line 474, in predict_proba
+    Xt = transform.transform(Xt)
+  File "/opt/anaconda3/envs/mlflow-9ad98997f01f10ca95d41cc160bcad3e8dac16f6/lib/python3.8/site-packages/sklearn/compose/_column_transformer.py", line 551, in transform
+    X = _check_X(X)
+  File "/opt/anaconda3/envs/mlflow-9ad98997f01f10ca95d41cc160bcad3e8dac16f6/lib/python3.8/site-packages/sklearn/compose/_column_transformer.py", line 629, in _check_X
+    return check_array(X, force_all_finite='allow-nan', dtype=object)
+  File "/opt/anaconda3/envs/mlflow-9ad98997f01f10ca95d41cc160bcad3e8dac16f6/lib/python3.8/site-packages/sklearn/utils/validation.py", line 63, in inner_f
+    return f(*args, **kwargs)
+  File "/opt/anaconda3/envs/mlflow-9ad98997f01f10ca95d41cc160bcad3e8dac16f6/lib/python3.8/site-packages/sklearn/utils/validation.py", line 630, in check_array
+    raise ValueError(
+ValueError: Expected 2D array, got scalar array instead:
+array=exercise_6/data_test.csv:latest.
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
